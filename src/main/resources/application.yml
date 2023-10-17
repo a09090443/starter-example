@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: example
+  main:
+    allow-bean-definition-overriding: true
+
+server:
+  servlet:
+    context-path: /example
+  port: 8080
+
+# web-service-spring-boot-starter
+web:
+  resource:
+    pathPattern: /static/** # 靜態資源 Uri
+    location: /WEB-INF/static/ # 靜態資源對應目錄，預設是在 /WEB-INF 目錄下
+  jsp:
+    enable: true # jsp page 開關
+    viewNames: jsp/* # jsp 對應 uri
+    stuff: .jsp # jsp 副檔名
+  thymeleaf:
+    enable: true # thymeleaf page 開關
+    viewNames: html/*, thymeleaf/* # thymeleaf 對應 uri
+    stuff: .html # thymeleaf 副檔名
+    templateMode: HTML # thymeleaf 模式
+  # web-service-spring-boot-starter
+  service:
+    map:
+      example:
+        beanName: exampleWebServiceImpl # example 資源對應的 bean
+        uri-mapping: /example # web service 資源對應 Uri，http://localhost:8080/webservice/example?wsdl
+    uri-mapping: /webservice/* # web service 對應 Uri，http://localhost:8080/webservice?wsdl
+
+# base-spring-boot-starter
+mail:
+  debug-enable: true # 是否開啟 debug 模式
+  username: webcomm # Username
+  pa55word: webcomm # Password
+  enable-encrypt: false # 密碼是否有加密
+  host: 127.0.0.1 # Mail server ip
+  port: 25 # Mail server port
+  smtp-auth-enable: true # 是否開啟 smtp 認證
+  sender: webcomm@localhost.com # 寄送者 mail address
+  transport-protocol: smtp # 郵件傳輸協定
+  smtp-start-tls-enable: true # Smtp tls 加密是否開啟
