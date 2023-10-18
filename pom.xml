@@ -13,6 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>starter-example</name>
     <description>starter-example</description>
+    <packaging>war</packaging>
     <properties>
         <java.version>1.8</java.version>
         <jaxws-ri.version>3.0.2</jaxws-ri.version>
@@ -83,11 +84,6 @@
         </dependency>
 
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
             <version>${webjars-bootstrap.version}</version>
@@ -124,10 +120,22 @@
         </dependency>
 
         <dependency>
+            <groupId>tw.com.webcomm</groupId>
+            <artifactId>db-spring-boot-starter</artifactId>
+            <version>${webcomm.spring.starter.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -138,6 +146,13 @@
                 <directory>src/main/webapp</directory>
                 <!--這裡必須是META-INF/resources-->
                 <targetPath>META-INF/resources</targetPath>
+                <includes>
+                    <include>**/**</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
                 <includes>
                     <include>**/**</include>
                 </includes>

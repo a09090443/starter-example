@@ -8,4 +8,8 @@ public interface ExampleService {
 
     List<User> findUsers();
 
+    void findExample1Data();
+
+    void findExample2Data();
+
 }

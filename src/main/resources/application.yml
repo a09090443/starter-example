@@ -3,6 +3,13 @@ spring:
     name: example
   main:
     allow-bean-definition-overriding: true
+  # db-spring-boot-starter
+  jpa:
+    base:
+      packages: com.example # Jpa repository package
+    hibernate:
+      ddl-auto: none # service 啟動時 database 自動建立機制 (create, create-drop, update, validate)
+    show-sql: false # 顯示 Sql 語法
 
 server:
   servlet:
