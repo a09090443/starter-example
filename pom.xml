@@ -20,6 +20,7 @@
         <webjars-bootstrap.version>5.2.3</webjars-bootstrap.version>
         <webjars-jquery.version>3.6.4</webjars-jquery.version>
         <webjars-locator.version>0.46</webjars-locator.version>
+        <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
         <webcomm.spring.starter.version>2.7.16.1</webcomm.spring.starter.version>
     </properties>
 
@@ -163,6 +164,22 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!--引入第三方jar 包-->
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${maven-war-plugin.version}</version>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <directory>${basedir}/src/main/lib</directory>
+                            <targetPath>WEB-INF/lib</targetPath>
+                            <includes>
+                                <include>**/*.jar</include>
+                            </includes>
+                        </resource>
+                    </webResources>
+                </configuration>
             </plugin>
         </plugins>
 

@@ -12,4 +12,7 @@ public interface ExampleService {
 
     void findExample2Data();
 
+    void findDb2Data();
+
+    void findByNativeSQL(String name);
 }
