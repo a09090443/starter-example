@@ -39,8 +39,11 @@ web:
   service:
     map:
       example:
-        beanName: exampleWebServiceImpl # example 資源對應的 bean
-        uri-mapping: /example # web service 資源對應 Uri，http://localhost:8080/webservice/example?wsdl
+        beanName: exampleWebServiceImpl
+        uri-mapping: /exampleWebService
+      exampleUser:
+        beanName: exampleUserServiceImpl
+        uri-mapping: /exampleUserService
     uri-mapping: /webservice/* # web service 對應 Uri，http://localhost:8080/webservice?wsdl
 
 # base-spring-boot-starter
