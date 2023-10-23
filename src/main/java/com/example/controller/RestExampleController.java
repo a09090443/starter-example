@@ -23,8 +23,8 @@ public class RestExampleController {
     }
 
     @GetMapping("/sayHello")
-    public String sayHello() {
-        return "Hello";
+    public String sayHello(String name) {
+        return "Hello, " + name + "!";
     }
 
     @GetMapping("/getUsers")
@@ -45,13 +45,13 @@ public class RestExampleController {
     }
 
     @GetMapping("/getDb2Test")
-    public String getDb2TestData(){
+    public String getDb2TestData() {
         exampleService.findDb2Data();
         return HttpStatus.OK.getReasonPhrase();
     }
 
     @GetMapping("/getJdbcData")
-    public String getJdbcData(@RequestParam String name){
+    public String getJdbcData(@RequestParam String name) {
         exampleService.findByNativeSQL(name);
         return HttpStatus.OK.getReasonPhrase();
     }
