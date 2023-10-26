@@ -19,7 +19,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"jobName\": \"ExampleDbJob\",\n  \"jobGroup\": \"job\",\n  \"jobDescription\": \"Ceate job use db\",\n  \"jobClass\": \"com.example.job.ExampleDbJob\",\n  \"startDate\": \"2023-10-20\",\n  \"endDate\": \"2025-10-20\",\n  \"time\": \"12:22:12\",\n  \"repeatInterval\": 1,\n  \"repeatTimes\": 3,\n  \"timeUnit\": 2,\n  \"jobDataMap\": {\n    \"name\":\"Gary\",\n    \"age\":28\n  }\n}"
+					"raw": "{\n  \"jobName\": \"ExampleDbJob\",\n  \"jobGroup\": \"job\",\n  \"jobDescription\": \"Ceate job use db\",\n  \"jobClass\": \"com.example.job.ExampleDbJob\",\n  \"startTime\": \"2023-10-26 17:22:12\",\n  \"endTime\": \"2025-10-26 18:02:12\",\n//   \"cronExpression\": \"0 30 16 ? * * *\", //如果有設定該值startTime,endTime皆無作用\n  \"repeatInterval\": 1,\n  \"repeatTimes\": -1,\n  \"timeUnit\": 2,\n  \"jobDataMap\": {\n    \"name\":\"Gary\",\n    \"age\":28\n  }\n}"
 				},
 				"url": {
 					"raw": "http://{{domain}}:{{port}}/example/job/register",
@@ -143,7 +143,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"jobName\": \"ExampleDbJob\",\n  \"jobGroup\": \"job\",\n  \"jobDescription\": \"Ceate job use db\",\n  \"jobClass\": \"com.example.job.ExampleDbJob\",\n  \"startDate\": \"2023-10-20\",\n  \"endDate\": \"2025-10-20\",\n  \"time\": \"12:22:12\",\n  \"repeatInterval\": 1,\n  \"repeatTimes\": 3,\n  \"timeUnit\": 2,\n  \"jobDataMap\": {\n    \"name\":\"Gary\",\n    \"age\":28\n  }\n}"
+					"raw": "{\n  \"jobName\": \"ExampleDbJob\",\n  \"jobGroup\": \"job\",\n  \"jobDescription\": \"Ceate job use db\",\n  \"jobClass\": \"com.example.job.ExampleDbJob\",\n  \"startTime\": \"2023-10-26 17:22:12\",\n  \"endTime\": \"2025-10-26 18:02:12\",\n//   \"cronExpression\": \"0 30 16 ? * * *\", //如果有設定該值startTime,endTime皆無作用\n  \"repeatInterval\": 1,\n  \"repeatTimes\": 3,\n  \"timeUnit\": 2,\n  \"jobDataMap\": {\n    \"name\":\"Gary\",\n    \"age\":28\n  }\n}"
 				},
 				"url": {
 					"raw": "http://{{domain}}:{{port}}/example/job/run",
