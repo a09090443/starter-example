@@ -9,7 +9,7 @@ import tw.com.webcomm.util.time.DateTimeUtils;
 @Component
 public class ExampleAnnotationJob {
 
-    @Scheduled(cron = "0/20 * * * * ?")
+//    @Scheduled(cron = "0/20 * * * * ?")
     public void example() {
         log.info("{}執行, 當前的時間:{}", this.getClass(), DateTimeUtils.getDateNow());
     }

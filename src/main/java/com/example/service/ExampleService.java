@@ -15,4 +15,6 @@ public interface ExampleService {
     void findDb2Data();
 
     void findByNativeSQL(String name);
+
+    String testException();
 }

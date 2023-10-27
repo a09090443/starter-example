@@ -86,4 +86,9 @@ public class ExampleServiceImpl implements ExampleService {
         UserEntity user = exampleJdbc.queryForBean(resource, params, UserEntity.class);
         log.debug(user.toString());
     }
+
+    @Override
+    public String testException() {
+        throw new RuntimeException("拋出一個異常");
+    }
 }

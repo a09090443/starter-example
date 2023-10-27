@@ -68,4 +68,10 @@ public class RestExampleController {
         log.info("MsgType:{}", request.getMsgType());
         return request;
     }
+
+    @GetMapping("err")
+    public int err() {
+        exampleService.testException();
+        return 1;
+    }
 }
