@@ -16,6 +16,7 @@
     <packaging>war</packaging>
     <properties>
         <java.version>1.8</java.version>
+        <env>dev</env>
         <jaxws-ri.version>3.0.2</jaxws-ri.version>
         <webjars-bootstrap.version>5.2.3</webjars-bootstrap.version>
         <webjars-jquery.version>3.6.4</webjars-jquery.version>
@@ -171,6 +172,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
             <!--引入第三方jar 包-->
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
@@ -186,6 +188,46 @@
                         </resource>
                     </webResources>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.coderplus.maven.plugins</groupId>
+                <artifactId>copy-rename-maven-plugin</artifactId>
+                <version>1.0</version>
+                <executions>
+                    <execution>
+                        <id>rename-file</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>rename</goal>
+                        </goals>
+                        <configuration>
+                            <sourceFile>${project.build.outputDirectory}/resources_${env}.properties</sourceFile>
+                            <destinationFile>${project.build.outputDirectory}/resources.properties</destinationFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>delete-files</id>
+                        <phase>compile</phase>
+                        <configuration>
+                            <target>
+                                <delete includeemptydirs="true">
+                                    <fileset dir="${project.build.directory}/classes">
+                                        <include name="**/resources_*.properties"/>
+                                    </fileset>
+                                </delete>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
 
